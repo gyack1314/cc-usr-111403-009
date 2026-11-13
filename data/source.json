@@ -1,0 +1,60 @@
+{
+  "inputs": {
+    "a": [
+      [
+        1,
+        "A"
+      ],
+      [
+        1,
+        "a"
+      ],
+      [
+        2,
+        null
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "b": [
+      [
+        1,
+        "a"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "c": [
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "schema": [
+    "int64",
+    "string"
+  ],
+  "collation": "casefold",
+  "expr": {
+    "op": "except",
+    "all": true,
+    "left": {
+      "op": "intersect",
+      "all": true,
+      "left": {
+        "input": "a"
+      },
+      "right": {
+        "input": "b"
+      }
+    },
+    "right": {
+      "input": "c"
+    }
+  }
+}
